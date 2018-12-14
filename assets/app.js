@@ -16,7 +16,22 @@
         }
          renderButtons();
 
+    $(document).ready(function() {
 
+        $("#add-button").on("click", function(){
+            event.preventDefault();
+            var userInput= $("#user-input").val().trim();
+            topics.push(userInput);
+            renderButtons (topics);
+             $("#user-input").val("");
+        });
+
+    $(document).on("click", ".btns", function(){ 
+      
+        var x=$(this).val();
+        console.log(x)
+         giphsTastic(x);
+    });
     function giphsTastic (x){
         var giphs = $("#giphs");
         giphs.empty();
@@ -56,20 +71,4 @@
         
     })
 };
-    $(document).ready(function() {
-
-        $("#add-button").on("click", function(){
-            event.preventDefault();
-            var userInput= $("#user-input").val().trim();
-            topics.push(userInput);
-            renderButtons (topics);
-             $("#user-input").val("");
-        });
-
-    $(document).on("click", ".btns", function(){ 
-      
-        var x=$(this).val();
-        console.log(x)
-         giphsTastic(x);
-    });
     });
