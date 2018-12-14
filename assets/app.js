@@ -1,6 +1,6 @@
 
         var buttons =$(".btns");
-        var topics =['Blockchain','Space x','dogs'];
+        var topics =['HTGAWM','Atypical','Stranger Things','Black Mirror','The Good Place','AHS','Family Guy','Mr.Robot','The handmaids Tale'];
 
         function renderButtons() {
              buttons.empty()
@@ -19,6 +19,7 @@
 
     function giphsTastic (x){
         var giphs = $("#giphs");
+        giphs.empty();
         var clickedButton = x;
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             clickedButton + "&api_key=RzMrz5WnZ5rpmi7ehin9gqvWkU0tbYcw";
@@ -37,9 +38,7 @@
                   image.attr("animate",results[j].images.fixed_height.url);
                   image.attr("still",results[j].images.fixed_height_still.url);
                   giphs.append(image)
-                  giphs.append('<p> Rating: ' +results[j].rating.toUpperCase() + '<p>');
-                  
-                 
+                  giphs.append('<p> Rating: ' +results[j].rating.toUpperCase() + '<p>');    
                   
             }
 
@@ -68,7 +67,9 @@
         });
 
     $(document).on("click", ".btns", function(){ 
-        var x=$(this).text();
+      
+        var x=$(this).val();
+        console.log(x)
          giphsTastic(x);
     });
     });

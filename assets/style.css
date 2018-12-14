@@ -6,3 +6,20 @@ margin-bottom: 15px;
     /* padding: 20px 20px 20px 20px; */
     margin: 10px 10px 10px 10px;
 }
+#giphs{
+ column-count: 2;  
+ text-align: center;
+}
+ .container{
+    margin: 40px auto;
+   
+} 
+body{
+    background-color: lightgray;
+}
+h2{
+    text-align: center;
+}
+.btn{
+    background-color: #008B8B;
+}
